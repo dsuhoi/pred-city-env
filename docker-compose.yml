@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    expose:
+      - ${DB_HOST}
+    environment:
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    env_file:
+      - ./.env
+  backend:
+    build: ./backend
+    command: uvicorn main:app  --host 0.0.0.0 --port 8000
+    volumes:
+      - ./backend:/backend_app
+    ports:
+      - 8001:8000
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://${DB_USERNAME}:${DB_PASSWORD}@db:${DB_HOST}/${DB_DATABASE}
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      - redis
+  # frontend:
+  #   build: ./frontend
+  #   ports:
+  #     - 3001:3000
+  #   env_file:
+  #     - ./.env
+  #   depends_on:
+  #     - backend
+
+volumes:
+  postgres_data:
