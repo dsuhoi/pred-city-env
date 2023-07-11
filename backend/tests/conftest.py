@@ -70,30 +70,5 @@ async def create_data():
             for d in loc_data
         ]
         db.add_all(loc_models)
-
-        car_data = [
-            ["9218C", 58045, 215],
-            ["4075H", 15951, 425],
-            ["1225K", 5446, 892],
-            ["3863F", 12933, 416],
-        ]
-
-        car_models = [
-            models.Car(car_number=d[0], current_loc=d[1], load_capacity=d[2])
-            for d in car_data
-        ]
-        db.add_all(car_models)
-
-        cargo_data = [
-            [12933, 58045, 123, "Text1"],
-            [58045, 12933, 250, "Text2"],
-            [15951, 58045, 123, "Text3"],
-        ]
-
-        cargo_models = [
-            models.Cargo(pick_up=d[0], delivery=d[1], weight=d[2], description=d[3])
-            for d in cargo_data
-        ]
-        db.add_all(cargo_models)
         await db.commit()
         print("DATA LOADED")

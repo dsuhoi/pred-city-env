@@ -1,9 +1,9 @@
-from sqlalchemy import select, update
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import func
 
-from .database import Base, engine
-from .models import Car, Location
+from .database import Base
+from .models import Location, User
 
 
 async def get_zip_codes(db: AsyncSession):
@@ -34,14 +34,6 @@ async def get_all(db: AsyncSession, model: Base):
 
 async def get_location(db: AsyncSession, zip: int):
     return (await db.scalars(select(Location).where(Location.zip == zip))).first()
-
-
-async def update_cars_position_random():
-    query = update(Car).values(
-        current_loc=select(Location.zip).order_by(func.random() + Car.id).limit(1)
-    )
-    async with engine.begin() as conn:
-        await conn.execute(query)
 
 
 async def create_model(db: AsyncSession, model: Base):

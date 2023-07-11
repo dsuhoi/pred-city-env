@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 fastapi = "^0.100.0"
 asyncpg = "^0.28.0"
 psycopg2-binary = "^2.9.6"
@@ -17,10 +17,15 @@ python-jose = "^3.3.0"
 pydantic = "^2.0.2"
 pydantic-settings = "^2.0.1"
 geopy = "^2.3.0"
+pandas = "^2.0.3"
+strawberry-graphql = {extras = ["fastapi"], version = "^0.194.4"}
+geoalchemy = "^0.7.2"
+passlib = "^1.7.4"
 
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
 
 [build-system]
 requires = ["poetry-core"]

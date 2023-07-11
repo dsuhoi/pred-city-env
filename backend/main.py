@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from core.database import init_db
 from core.init_data_db import init_data
-from routers import geo, gql, users
+from routers import users
 
 app = FastAPI(
     title="Аналитика гетто",
@@ -22,8 +22,8 @@ app.add_middleware(
 )
 
 app.include_router(users.router)
-app.include_router(geo.router)
-app.include_router(gql.router, prefix="/graphql")
+# app.include_router(geo.router)
+# app.include_router(gql.router, prefix="/graphql")
 
 
 @app.on_event("startup")
