@@ -21,6 +21,8 @@ pandas = "^2.0.3"
 strawberry-graphql = {extras = ["fastapi"], version = "^0.194.4"}
 geoalchemy = "^0.7.2"
 passlib = "^1.7.4"
+websocket = "^0.2.1"
+sqlalchemy-utils = "^0.41.1"
 
 
 [tool.poetry.group.dev.dependencies]

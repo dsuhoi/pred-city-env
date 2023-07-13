@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 
 from core.database import init_db
 from core.init_data_db import init_data
@@ -30,6 +31,11 @@ app.include_router(users.router)
 async def on_startup():
     await init_db()
     await init_data()
+
+
+@app.get("/")
+async def root():
+    return RedirectResponse("/redoc")
 
 
 if __name__ == "__main__":

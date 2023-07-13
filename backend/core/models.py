@@ -1,18 +1,21 @@
-import random
-
 import sqlalchemy as sa
 from geopy.distance import distance as geodist
+from sqlalchemy_utils.types.choice import ChoiceType
 
 from .database import Base
 
 
 class User(Base):
+    ROLE_TYPES = [(1, "admin"), (2, "user")]
     __tablename__ = "users"
 
     id = sa.Column(sa.Integer, primary_key=True, index=True)
-    username = sa.Column(sa.String, unique=True, index=True)
+    username = sa.Column(sa.String(32), unique=True, index=True)
     hashed_password = sa.Column(sa.String)
-    full_name = sa.Column(sa.String, nullable=True)
+    full_name = sa.Column(sa.String(64), nullable=True)
+    role = sa.Column(
+        ChoiceType(ROLE_TYPES, impl=sa.Integer()), default=2, nullable=False
+    )
     created_at = sa.Column(sa.DateTime, server_default=sa.sql.func.now())
 
     def __repr__(self):
@@ -35,5 +38,5 @@ class Location(Base):
     def distance(self, loc: "Location") -> float:
         return round(geodist(self.coords, loc.coords).miles, 4)
 
-    def __str__(self):
+    def __repr__(self):
         return f"zip[{self.lat}, {self.lng}]: {self.zip} # {self.city}"

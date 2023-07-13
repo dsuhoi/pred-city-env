@@ -23,10 +23,11 @@ class User(BaseModel):
 
 
 class UserResponse(User):
+    role: str
     created_at: Datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class UserPost(User):

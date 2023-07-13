@@ -2,7 +2,7 @@ import core.schemas as schemas
 from core.auth import (create_access_token, get_current_user,
                        get_password_hash, verify_password)
 from core.database import get_session
-from core.model_utils import get_user_by_username
+from core.model_utils import create_model, delete_model, get_user_by_username
 from core.models import User
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
@@ -43,8 +43,7 @@ async def create_user(
         hashed_password=get_password_hash(user_data.password),
         full_name=user_data.full_name,
     )
-    db.add(user)
-    await db.commit()
+    await create_model(db, user)
     return schemas.UserResponse(
         username=user.username, full_name=user.full_name, created_at=user.created_at
     )
@@ -58,6 +57,7 @@ async def get_info_user(
     return schemas.UserResponse(
         username=user.username,
         full_name=user.full_name,
+        role=user.role.value,
         created_at=user.created_at,
     )
 
@@ -115,6 +115,5 @@ async def delete_user(
     user: User = Depends(get_current_user), db: AsyncSession = Depends(get_session)
 ):
     """Удалить пользователя"""
-    await db.delete(user)
-    await db.commit()
+    await delete_model(db, user)
     return {"message": "User deleted"}
