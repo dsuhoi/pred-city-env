@@ -5,9 +5,9 @@ from streamlit_folium import folium_static
 
 st.set_page_config(layout="wide")
 st.header("Карта геттоизации районов Санкт-Петербурга")
-json1 = f"saint_pet.geojson"
+json1 = f"frontend/MVP/saint_pet.geojson"
 
-population = pd.read_csv("saint_pet_population.csv")
+population = pd.read_csv("frontend/MVP/saint_pet_population.csv")
 
 
 m = folium.Map(
