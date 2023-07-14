@@ -1,7 +1,7 @@
 import core.models as models
 import core.schemas as schemas
 import strawberry
-from core.auth import ...
+# from core.auth import ...
 from core.database import get_session
 from core.model_utils import get_all, get_by_id, get_location
 from fastapi import Depends
