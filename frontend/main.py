@@ -1,18 +1,30 @@
+import json
+import pathlib
+import random
+
 import folium
 import pandas as pd
 import streamlit as st
 from streamlit_folium import folium_static
 
-BASE_DIR = "frontend/MVP/"
-
-st.set_page_config(layout="wide")
-st.header("Карта геттоизации районов Санкт-Петербурга")
+BASE_DIR = pathlib.Path(__file__).parent.resolve().joinpath("data")
+geojson_path = BASE_DIR.joinpath("saint_pet.geojson")
 
 
-json1 = BASE_DIR + "saint_pet.geojson"
+def read_df_from_geojson(gj: dict) -> pd.DataFrame:
+    data = {"район": [], "население": [], "площадь": [], "индекс счастья": []}
+    for dist in gj["features"]:
+        dist = dist["properties"]
+        data["район"].append(dist["district"])
+        data["население"].append(dist["population"])
+        data["площадь"].append(dist["area"])
+        data["индекс счастья"].append(random.randint(1, 20))
+    return pd.DataFrame.from_dict(data)
 
-saint_data = pd.read_csv(BASE_DIR + "saint_pet_data.csv")
 
+with open(geojson_path, "r") as f:
+    geojson = json.load(f)
+saint_data = read_df_from_geojson(geojson)
 
 m = folium.Map(
     location=[59.95, 30.19],
@@ -21,6 +33,9 @@ m = folium.Map(
     zoom_start=10,
 )
 
+st.set_page_config(layout="wide")
+st.header("Карта геттоизации районов Санкт-Петербурга")
+
 choice_selected = st.selectbox(
     "Выбор деления карты ", ["Деление на районы", "Деление на кварталы"]
 )
@@ -28,7 +43,7 @@ choice_metric = st.selectbox(
     "Выбор метрики ", ["Население", "Площадь", "Индекс счастья"]
 )
 folium.Choropleth(
-    geo_data=json1,
+    geo_data=geojson,
     name="choropleth",
     data=saint_data,
     columns=["район", choice_metric.lower()],
@@ -39,7 +54,7 @@ folium.Choropleth(
     legend_name=choice_metric,
 ).add_to(m)
 folium.features.GeoJson(
-    json1,
+    geojson,
     name="Название субъекта",
     popup=folium.features.GeoJsonPopup(fields=["district", "population", "area"]),
 ).add_to(m)
