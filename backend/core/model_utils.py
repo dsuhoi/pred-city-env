@@ -3,11 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import func
 
 from .database import Base
-from .models import Location, User
-
-
-async def get_zip_codes(db: AsyncSession):
-    return (await db.scalars(select(Location.zip))).all()
+from .models import User
 
 
 async def get_user_by_id(id: int, db: AsyncSession) -> User:
@@ -30,10 +26,6 @@ async def get_by_id(db: AsyncSession, model: Base, id: int):
 
 async def get_all(db: AsyncSession, model: Base):
     return (await db.scalars(select(model))).all()
-
-
-async def get_location(db: AsyncSession, zip: int):
-    return (await db.scalars(select(Location).where(Location.zip == zip))).first()
 
 
 async def create_model(db: AsyncSession, model: Base):

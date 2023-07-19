@@ -1,5 +1,5 @@
+import geoalchemy2 as gsa
 import sqlalchemy as sa
-from geopy.distance import distance as geodist
 from sqlalchemy_utils.types.choice import ChoiceType
 
 from .database import Base
@@ -22,21 +22,89 @@ class User(Base):
         return f"User(id={self.id},username={self.username})"
 
 
-class Location(Base):
-    __tablename__ = "locations"
+class District_property(Base):
+    __tablename__ = "district_properties"
+
+    district_id = sa.Column(
+        sa.ForeignKey("districts.id", ondelete="CASCADE"),
+        primary_key=True,
+        index=True,
+    )
+    population = sa.Column(sa.Integer, nullable=True)
+    area = sa.Column(sa.Float, nullable=False)
+
+    district = sa.orm.relationship("District", back_populates="properties")
+
+
+class Block_property(Base):
+    __tablename__ = "block_properties"
+
+    block_id = sa.Column(
+        sa.Integer,
+        sa.ForeignKey("blocks.id", ondelete="CASCADE"),
+        primary_key=True,
+        index=True,
+    )
+    population = sa.Column(sa.Integer, nullable=True)
+    area = sa.Column(sa.Float, nullable=False)
+
+    block = sa.orm.relationship("Block", back_populates="properties")
+
+
+class City_property(Base):
+    __tablename__ = "city_properties"
+
+    city_id = sa.Column(
+        sa.ForeignKey("cities.id", ondelete="CASCADE"), primary_key=True, index=True
+    )
+    population = sa.Column(sa.Integer, nullable=True)
+    area = sa.Column(sa.Float, nullable=False)
+
+    city = sa.orm.relationship("City", back_populates="properties")
+
+
+class District(Base):
+    __tablename__ = "districts"
+
     id = sa.Column(sa.Integer, primary_key=True, index=True)
-    zip = sa.Column(sa.Integer, unique=True, index=True, nullable=False)
-    city = sa.Column(sa.String(32), nullable=False)
-    state_name = sa.Column(sa.Text, nullable=False)
-    lat = sa.Column(sa.Float, nullable=False)
-    lng = sa.Column(sa.Float, nullable=False)
+    title = sa.Column(sa.String(120), nullable=False)
+    city_id = sa.Column(sa.ForeignKey("cities.id", ondelete="CASCADE"))
+    geom = sa.Column(
+        gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
+    )
 
-    @property
-    def coords(self) -> (float, float):
-        return (self.lat, self.lng)
+    city = sa.orm.relationship("City", back_populates="districts", lazy="selectin")
+    properties = sa.orm.relationship(
+        "District_property", back_populates="district", uselist=False
+    )
 
-    def distance(self, loc: "Location") -> float:
-        return round(geodist(self.coords, loc.coords).miles, 4)
 
-    def __repr__(self):
-        return f"zip[{self.lat}, {self.lng}]: {self.zip} # {self.city}"
+class Block(Base):
+    __tablename__ = "blocks"
+    id = sa.Column(sa.Integer, primary_key=True, index=True)
+    title = sa.Column(sa.String(120), nullable=False)
+    city_id = sa.Column(sa.ForeignKey("cities.id", ondelete="CASCADE"))
+    geom = sa.Column(
+        gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
+    )
+
+    city = sa.orm.relationship("City", back_populates="blocks", lazy="selectin")
+    properties = sa.orm.relationship(
+        "Block_property", back_populates="block", uselist=False
+    )
+
+
+class City(Base):
+    __tablename__ = "cities"
+
+    id = sa.Column(sa.Integer, primary_key=True, index=True)
+    title = sa.Column(sa.String(120), nullable=False)
+    geom = sa.Column(
+        gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
+    )
+
+    districts = sa.orm.relationship("District", back_populates="city", lazy="selectin")
+    blocks = sa.orm.relationship("Block", back_populates="city", lazy="selectin")
+    properties = sa.orm.relationship(
+        "City_property", back_populates="city", uselist=False
+    )
