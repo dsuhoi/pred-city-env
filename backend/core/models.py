@@ -1,8 +1,24 @@
 import geoalchemy2 as gsa
 import sqlalchemy as sa
+from shapely.geometry import shape
 from sqlalchemy_utils.types.choice import ChoiceType
 
 from .database import Base
+
+
+def geom_init_decorator(cls):
+    init = cls.__init__
+
+    def new_init(self, *args, geom, **kwargs):
+        if isinstance(geom, dict):
+            init(
+                self, *args, geom=gsa.shape.from_shape(shape(geom), srid=4326), **kwargs
+            )
+        else:
+            init(self, *args, geom=geom, **kwargs)
+
+    cls.__init__ = new_init
+    return cls
 
 
 class User(Base):
@@ -63,6 +79,7 @@ class City_property(Base):
     city = sa.orm.relationship("City", back_populates="properties")
 
 
+@geom_init_decorator
 class District(Base):
     __tablename__ = "districts"
 
@@ -79,6 +96,7 @@ class District(Base):
     )
 
 
+@geom_init_decorator
 class Block(Base):
     __tablename__ = "blocks"
     id = sa.Column(sa.Integer, primary_key=True, index=True)
@@ -94,6 +112,7 @@ class Block(Base):
     )
 
 
+@geom_init_decorator
 class City(Base):
     __tablename__ = "cities"
 

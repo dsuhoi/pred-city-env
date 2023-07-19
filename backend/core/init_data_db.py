@@ -3,7 +3,7 @@ import json
 import pathlib
 
 import geoalchemy2 as gsa
-import geopandas
+# import geopandas
 import shapely
 
 from core.auth import get_password_hash
@@ -12,7 +12,7 @@ from core.model_utils import get_count
 from .database import async_session, init_db
 from .models import City, City_property, District, District_property, User
 
-DATA_DIR = pathlib.Path(__file__).parent.parent.parent.joinpath("data")
+DATA_DIR = pathlib.Path(__file__).parent.parent.joinpath("data")
 
 
 async def __spb_example_init_data():
@@ -22,7 +22,6 @@ async def __spb_example_init_data():
     districts = []
     for dist in data["features"]:
         props = dist["properties"]
-        mpoly = shapely.geometry.shape(dist["geometry"])
         districts.append(
             District(
                 title=props["district"],
@@ -30,7 +29,7 @@ async def __spb_example_init_data():
                     population=props["population"],
                     area=props["area"],
                 ),
-                geom=gsa.shape.from_shape(mpoly, srid=4326),
+                geom=dist["geometry"],
             )
         )
 
@@ -72,8 +71,8 @@ async def init_test_admin_user():
 
 async def init_data():
     async with async_session() as db:
-        # if (await get_count(db, User)) == 0:
-        #     await init_test_admin_user()
+        if (await get_count(db, User)) == 0:
+            await init_test_admin_user()
         if (await get_count(db, City)) == 0:
             await __spb_example_init_data()
 
