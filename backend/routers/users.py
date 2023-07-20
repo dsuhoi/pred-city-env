@@ -62,7 +62,7 @@ async def get_info_user(
     )
 
 
-@router.get("/all", response_model=schemas.UserList)
+@router.get("/", response_model=schemas.UserList)
 async def get_users(db: AsyncSession = Depends(get_session)):
     """Получить список всех пользователей"""
     users = (await db.scalars(select(User))).all()

@@ -5,11 +5,13 @@ import pathlib
 import geoalchemy2 as gsa
 # import geopandas
 import shapely
+import sqlalchemy as sa
 
 from core.auth import get_password_hash
 from core.model_utils import get_count
 
 from .database import async_session, init_db
+from .model_utils import get_city_and_districts
 from .models import City, City_property, District, District_property, User
 
 DATA_DIR = pathlib.Path(__file__).parent.parent.joinpath("data")

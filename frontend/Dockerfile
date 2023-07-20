@@ -1,5 +1,5 @@
 FROM python:3.10-slim
-EXPOSE 8501
+
 WORKDIR /frontend_mvp
 RUN pip3 install poetry
 

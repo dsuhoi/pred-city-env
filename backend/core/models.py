@@ -90,9 +90,14 @@ class District(Base):
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
     )
 
+    @property
+    def geometry(self):
+        shape = gsa.shape.to_shape(self.geom)
+        return shape.__geo_interface__
+
     city = sa.orm.relationship("City", back_populates="districts", lazy="selectin")
     properties = sa.orm.relationship(
-        "District_property", back_populates="district", uselist=False
+        "District_property", back_populates="district", uselist=False, lazy="selectin"
     )
 
 
@@ -106,9 +111,14 @@ class Block(Base):
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
     )
 
+    @property
+    def geometry(self):
+        shape = gsa.shape.to_shape(self.geom)
+        return shape.__geo_interface__
+
     city = sa.orm.relationship("City", back_populates="blocks", lazy="selectin")
     properties = sa.orm.relationship(
-        "Block_property", back_populates="block", uselist=False
+        "Block_property", back_populates="block", uselist=False, lazy="selectin"
     )
 
 
@@ -122,8 +132,13 @@ class City(Base):
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
     )
 
+    @property
+    def geometry(self):
+        shape = gsa.shape.to_shape(self.geom)
+        return shape.__geo_interface__
+
     districts = sa.orm.relationship("District", back_populates="city", lazy="selectin")
     blocks = sa.orm.relationship("Block", back_populates="city", lazy="selectin")
     properties = sa.orm.relationship(
-        "City_property", back_populates="city", uselist=False
+        "City_property", back_populates="city", uselist=False, lazy="selectin"
     )

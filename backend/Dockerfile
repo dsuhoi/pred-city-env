@@ -8,7 +8,7 @@ RUN pip3 install poetry
 COPY *.py pytest.ini poetry.lock pyproject.toml ./
 COPY core/ ./core/
 COPY routers/ ./routers/
-# COPY tasks/ ./tasks/
+COPY data/ ./data/
 COPY tests/ ./tests/
 
 RUN poetry config virtualenvs.create false \

@@ -25,14 +25,14 @@ services:
       - ./.env
     depends_on:
       - db
-  # frontend:
-  #   build: ./frontend
-  #   ports:
-  #     - 3001:3000
-  #   env_file:
-  #     - ./.env
-  #   depends_on:
-  #     - backend
+  frontend:
+    build: ./frontend
+    ports:
+      - 8051:8051
+    env_file:
+      - ./.env
+    depends_on:
+      - backend
 
 volumes:
   postgres_data:
