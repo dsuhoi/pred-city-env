@@ -50,8 +50,14 @@ class District_property(Base):
         primary_key=True,
         index=True,
     )
-    population = sa.Column(sa.Integer, nullable=True)
-    area = sa.Column(sa.Float, nullable=False)
+    common_area = sa.Column(sa.Float, nullable=False)
+    beers_per_square_km = sa.Column(sa.Float)
+    shop_numbers = sa.Column(sa.Integer)
+    green_area = sa.Column(sa.Float)
+    station_numbers = sa.Column(sa.Integer)
+    avg_altitude_apartments = sa.Column(sa.Float)
+    garage_area = sa.Column(sa.Float)
+    retail_area = sa.Column(sa.Float)
 
     @property
     def title(self) -> str:
@@ -69,8 +75,14 @@ class Block_property(Base):
         primary_key=True,
         index=True,
     )
-    population = sa.Column(sa.Integer, nullable=True)
-    area = sa.Column(sa.Float, nullable=False)
+    common_area = sa.Column(sa.Float, nullable=False)
+    beers_per_square_km = sa.Column(sa.Float)
+    shop_numbers = sa.Column(sa.Integer)
+    green_area = sa.Column(sa.Float)
+    station_numbers = sa.Column(sa.Integer)
+    avg_altitude_apartments = sa.Column(sa.Float)
+    garage_area = sa.Column(sa.Float)
+    retail_area = sa.Column(sa.Float)
 
     @property
     def title(self) -> str:
@@ -85,8 +97,6 @@ class City_property(Base):
     city_id = sa.Column(
         sa.ForeignKey("cities.id", ondelete="CASCADE"), primary_key=True, index=True
     )
-    population = sa.Column(sa.Integer, nullable=True)
-    area = sa.Column(sa.Float, nullable=False)
 
     @property
     def title(self) -> str:
@@ -100,7 +110,7 @@ class District(Base):
     __tablename__ = "districts"
 
     id = sa.Column(sa.Integer, primary_key=True, index=True)
-    title = sa.Column(sa.String(120), nullable=False)
+    title = sa.Column(sa.String, nullable=False)
     city_id = sa.Column(sa.ForeignKey("cities.id", ondelete="CASCADE"))
     geom = sa.Column(
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
@@ -116,7 +126,7 @@ class District(Base):
 class Block(Base):
     __tablename__ = "blocks"
     id = sa.Column(sa.Integer, primary_key=True, index=True)
-    title = sa.Column(sa.String(120), nullable=False)
+    title = sa.Column(sa.String, nullable=False)
     city_id = sa.Column(sa.ForeignKey("cities.id", ondelete="CASCADE"))
     geom = sa.Column(
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False

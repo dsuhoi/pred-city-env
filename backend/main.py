@@ -8,9 +8,9 @@ from core.init_data_db import init_data
 from routers import geo, others, users
 
 app = FastAPI(
-    title="Аналитика гетто",
-    description="Предоставление driven-data аналитики по гетто",
-    version="1.1.0",
+    title="Аналитика благоустройства городской среды",
+    description="Предоставление аналитики по различным критериям благоустройства городской среды",
+    version="1.3.0",
     license_info={"name": "MIT License", "url": "https://mit-license.org/"},
 )
 

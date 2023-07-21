@@ -14,44 +14,35 @@ from .models import City, City_property, District, District_property, User
 DATA_DIR = pathlib.Path(__file__).parent.parent.joinpath("data")
 
 
-async def __spb_example_init_data():
-    with open(DATA_DIR.joinpath("saint_pet.geojson"), "r") as f:
+async def init_geo_data():
+    with open(DATA_DIR.joinpath("geo_data.geojson"), "r") as f:
         data = json.load(f)
 
-    districts = []
-    for dist in data["features"]:
-        props = dist["properties"]
-        districts.append(
-            District(
-                title=props["district"],
-                properties=District_property(
-                    population=props["population"],
-                    area=props["area"],
-                ),
-                geom=dist["geometry"],
-            )
-        )
-    city = City(
-        title="Санкт-Петербург",
-        properties=City_property(population=5600044, area=1439),
-        districts=districts,
-        blocks=[],
-        geom=gsa.shape.from_shape(shapely.geometry.MultiPolygon(), srid=4326),
-    )
     async with async_session() as db:
-        db.add(city)
-        await db.commit()
+        for city in data["features"]:
+            districts = []
+            for dist in city["districts"]["features"]:
+                dist_props = dist["properties"]
+                dist_title = dist_props.pop("title")
+                districts.append(
+                    District(
+                        title=dist_title,
+                        properties=District_property(**dist_props),
+                        geom=dist["geometry"],
+                    )
+                )
+            city_props = city["properties"]
+            city_title = city_props.pop("title")
+            city_row = City(
+                title=city_title,
+                properties=City_property(**city_props),
+                districts=districts,
+                blocks=[],
+                geom=city["geometry"],
+            )
+            db.add(city_row)
+            await db.commit()
     print("Successful init data!")
-
-    # for i, dist in enumerate(data["features"]):
-    #     if dist["geometry"]["type"] == "Polygon":
-    #         poly = shapely.geometry.shape(dist["geometry"])
-    #         mpoly = shapely.geometry.MultiPolygon([poly])
-    #         gjson = geopandas.GeoSeries([mpoly]).__geo_interface__
-    #         data["features"][i]["geometry"] = gjson["features"][0]["geometry"]
-    # print(data)
-    # with open(DATA_DIR.joinpath("saint_pet.geojson"), "w") as f:
-    #     json.dump(data, f, ensure_ascii=False)
 
 
 async def init_test_admin_user():
@@ -72,7 +63,7 @@ async def init_data():
         if (await get_count(db, User)) == 0:
             await init_test_admin_user()
         if (await get_count(db, City)) == 0:
-            await __spb_example_init_data()
+            await init_geo_data()
 
 
 async def _init_all_db():

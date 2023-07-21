@@ -56,9 +56,22 @@ class LoginResponse(BaseModel):
 
 class Properties(BaseModel):
     # title: str
-    population: int = Field(ge=0, description="Население")
-    area: float = Field(gt=0, description="Площадь(км^2)")
+    common_area: float = Field(gt=0, description="Общая площадь(км^2)")
+    beers_per_square_km: float = Field(
+        ge=0, description="Количестов пивных магазинов на км^2"
+    )
+    shop_numbers: int = Field(ge=0, description="Количество магазинов")
+    green_area: float = Field(ge=0, description="Площадь озелененной территории")
+    station_numbers: int = Field(ge=0, description="Количество остановок")
+    avg_altitude_apartments: float | None = Field(description="Высотность зданий")
+    garage_area: float = Field(ge=0, description="Площадь гаражных территорий")
+    retail_area: float = Field(ge=0, description="Площадь рынков и овощебаз")
 
+    class Config:
+        from_attributes = True
+
+
+class PropertiesCity(BaseModel):
     class Config:
         from_attributes = True
 
@@ -121,7 +134,7 @@ class CityList(BaseModel):
 
 class City(BaseModel):
     title: str = Field(description="Название города")
-    properties: Properties
+    properties: PropertiesCity
     districts: list[DistrictList] | None
     blocks: list[BlockList] | None
     geometry: Geometry
