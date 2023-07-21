@@ -1,5 +1,5 @@
-import json
-import pathlib
+# import json
+# import pathlib
 import random
 
 import folium
@@ -25,9 +25,12 @@ def read_df_from_geojson(gj: dict) -> pd.DataFrame:
 
 # with open(geojson_path, "r") as f:
 #     geojson = json.load(f)
+spb_id = requests.get(
+    "http://0.0.0.0:8000/geo/cities", params={"title": "Санкт-Петербург"}
+).json()["id"]
 geojson = requests.get(
-    "http://0.0.0.0:8000/geo/cities", params={"city_title": "Санкт-Петербург"}
-).json()["districts"]
+    "http://0.0.0.0:8000/geo/districts", params={"city_id": spb_id, "geojson": True}
+).json()
 saint_data = read_df_from_geojson(geojson)
 
 m = folium.Map(

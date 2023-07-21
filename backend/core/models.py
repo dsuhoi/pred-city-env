@@ -11,19 +11,23 @@ def geom_init_decorator(cls):
 
     def new_init(self, *args, geom, **kwargs):
         if isinstance(geom, dict):
-            init(
-                self, *args, geom=gsa.shape.from_shape(shape(geom), srid=4326), **kwargs
-            )
-        else:
-            init(self, *args, geom=geom, **kwargs)
+            geom = gsa.shape.from_shape(shape(geom), srid=4326)
+        init(self, *args, geom=geom, **kwargs)
 
+    @property
+    def geometry(self):
+        shape = gsa.shape.to_shape(self.geom)
+        return shape.__geo_interface__
+
+    cls.geometry = geometry
     cls.__init__ = new_init
     return cls
 
 
 class User(Base):
-    ROLE_TYPES = [(1, "admin"), (2, "user")]
     __tablename__ = "users"
+
+    ROLE_TYPES = [(1, "admin"), (2, "user")]
 
     id = sa.Column(sa.Integer, primary_key=True, index=True)
     username = sa.Column(sa.String(32), unique=True, index=True)
@@ -49,6 +53,10 @@ class District_property(Base):
     population = sa.Column(sa.Integer, nullable=True)
     area = sa.Column(sa.Float, nullable=False)
 
+    @property
+    def title(self) -> str:
+        return self.district.title
+
     district = sa.orm.relationship("District", back_populates="properties")
 
 
@@ -64,6 +72,10 @@ class Block_property(Base):
     population = sa.Column(sa.Integer, nullable=True)
     area = sa.Column(sa.Float, nullable=False)
 
+    @property
+    def title(self) -> str:
+        return self.block.title
+
     block = sa.orm.relationship("Block", back_populates="properties")
 
 
@@ -75,6 +87,10 @@ class City_property(Base):
     )
     population = sa.Column(sa.Integer, nullable=True)
     area = sa.Column(sa.Float, nullable=False)
+
+    @property
+    def title(self) -> str:
+        return self.district.title
 
     city = sa.orm.relationship("City", back_populates="properties")
 
@@ -89,11 +105,6 @@ class District(Base):
     geom = sa.Column(
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
     )
-
-    @property
-    def geometry(self):
-        shape = gsa.shape.to_shape(self.geom)
-        return shape.__geo_interface__
 
     city = sa.orm.relationship("City", back_populates="districts", lazy="selectin")
     properties = sa.orm.relationship(
@@ -111,11 +122,6 @@ class Block(Base):
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
     )
 
-    @property
-    def geometry(self):
-        shape = gsa.shape.to_shape(self.geom)
-        return shape.__geo_interface__
-
     city = sa.orm.relationship("City", back_populates="blocks", lazy="selectin")
     properties = sa.orm.relationship(
         "Block_property", back_populates="block", uselist=False, lazy="selectin"
@@ -131,11 +137,6 @@ class City(Base):
     geom = sa.Column(
         gsa.Geometry(geometry_type="MULTIPOLYGON", srid=4326), nullable=False
     )
-
-    @property
-    def geometry(self):
-        shape = gsa.shape.to_shape(self.geom)
-        return shape.__geo_interface__
 
     districts = sa.orm.relationship("District", back_populates="city", lazy="selectin")
     blocks = sa.orm.relationship("Block", back_populates="city", lazy="selectin")

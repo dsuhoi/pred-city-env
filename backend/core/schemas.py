@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Annotated
 
 import shapely
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl
 
 Lat = Annotated[float, Field(example=10.345, description="Широта")]
 Lng = Annotated[float, Field(example=10.345, description="Долгота")]
@@ -55,6 +55,7 @@ class LoginResponse(BaseModel):
 
 
 class Properties(BaseModel):
+    # title: str
     population: int = Field(ge=0, description="Население")
     area: float = Field(gt=0, description="Площадь(км^2)")
 
@@ -127,3 +128,7 @@ class City(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class LinksList(BaseModel):
+    links: list[HttpUrl]

@@ -3,15 +3,12 @@ import json
 import pathlib
 
 import geoalchemy2 as gsa
-# import geopandas
 import shapely
-import sqlalchemy as sa
 
 from core.auth import get_password_hash
 from core.model_utils import get_count
 
 from .database import async_session, init_db
-from .model_utils import get_city_and_districts
 from .models import City, City_property, District, District_property, User
 
 DATA_DIR = pathlib.Path(__file__).parent.parent.joinpath("data")
@@ -34,8 +31,7 @@ async def __spb_example_init_data():
                 geom=dist["geometry"],
             )
         )
-
-    spb = City(
+    city = City(
         title="Санкт-Петербург",
         properties=City_property(population=5600044, area=1439),
         districts=districts,
@@ -43,7 +39,7 @@ async def __spb_example_init_data():
         geom=gsa.shape.from_shape(shapely.geometry.MultiPolygon(), srid=4326),
     )
     async with async_session() as db:
-        db.add(spb)
+        db.add(city)
         await db.commit()
     print("Successful init data!")
 
