@@ -6,6 +6,8 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     expose:
       - ${DB_HOST}
+    # networks:
+    #   - default
     environment:
       - POSTGRES_DB=${DB_DATABASE}
       - POSTGRES_USER=${DB_USERNAME}
@@ -19,6 +21,8 @@ services:
       - ./backend:/backend_app
     ports:
       - 8001:8000
+    # networks:
+    #   - default
     environment:
       - DATABASE_URL=postgresql+asyncpg://${DB_USERNAME}:${DB_PASSWORD}@db:${DB_HOST}/${DB_DATABASE}
     env_file:
@@ -29,6 +33,9 @@ services:
     build: ./frontend
     ports:
       - 8051:8051
+    # networks:
+    #   - default
+    # network_mode: host
     env_file:
       - ./.env
     depends_on:
@@ -36,3 +43,7 @@ services:
 
 volumes:
   postgres_data:
+networks:
+  default:
+  # outside:
+  #   external: true

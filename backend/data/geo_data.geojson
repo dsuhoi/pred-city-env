@@ -3052,7 +3052,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Дзержинский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Дзержинский район",
                             "common_area": 36.48418122948147,
                             "beers_per_square_km": 0.5755919220966565,
                             "shop_numbers": 4,
@@ -3060,7 +3060,15 @@
                             "station_numbers": 70,
                             "avg_altitude_apartments": 7.782786885245901,
                             "garage_area": 0.015025353925477178,
-                            "retail_area": 0.00002095751853127553
+                            "retail_area": 0.00002095751853127553,
+                            "shop_numbers_normalized": 0.0769230769,
+                            "garage_area_normalized": 0.2986684666,
+                            "retail_area_normalized": 0.0,
+                            "beers_per_square_km_normalized": 0.0778889805,
+                            "station_numbers_normalized": 0.1438848921,
+                            "avg_altitude_apartments_normalized": 0.3488881866,
+                            "green_area_normalized": 0.2796538681,
+                            "index_level": 4.6211700496
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -3474,7 +3482,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Железнодорожный район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Железнодорожный район",
                             "common_area": 7.195632409426243,
                             "beers_per_square_km": 3.057410210557742,
                             "shop_numbers": 4,
@@ -3482,7 +3490,15 @@
                             "station_numbers": 50,
                             "avg_altitude_apartments": 9.128654970760234,
                             "garage_area": 0.005499802888384388,
-                            "retail_area": 0.0012860641970981743
+                            "retail_area": 0.0012860641970981743,
+                            "shop_numbers_normalized": 0.0769230769,
+                            "garage_area_normalized": 0.036912369,
+                            "retail_area_normalized": 0.0956191505,
+                            "beers_per_square_km_normalized": 0.4865048999,
+                            "station_numbers_normalized": 0.0,
+                            "avg_altitude_apartments_normalized": 0.6166626088,
+                            "green_area_normalized": 0.0131110766,
+                            "index_level": 3.7004889716
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -3538,7 +3554,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Заельцовский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Заельцовский район",
                             "common_area": 71.10328244417416,
                             "beers_per_square_km": 0.7172664643160744,
                             "shop_numbers": 14,
@@ -3546,7 +3562,15 @@
                             "station_numbers": 119,
                             "avg_altitude_apartments": 7.505511811023622,
                             "garage_area": 0.005699663148623074,
-                            "retail_area": 0.000027061849028733556
+                            "retail_area": 0.000027061849028733556,
+                            "shop_numbers_normalized": 0.8461538462,
+                            "garage_area_normalized": 0.0424044021,
+                            "retail_area_normalized": 0.0004613768,
+                            "beers_per_square_km_normalized": 0.1012148113,
+                            "station_numbers_normalized": 0.4964028777,
+                            "avg_altitude_apartments_normalized": 0.2937214332,
+                            "green_area_normalized": 1.0,
+                            "index_level": 5.2124470082
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -4033,7 +4057,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Калининский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Калининский район",
                             "common_area": 46.26675908630175,
                             "beers_per_square_km": 0.6916412697139679,
                             "shop_numbers": 9,
@@ -4041,7 +4065,15 @@
                             "station_numbers": 97,
                             "avg_altitude_apartments": 7.416829745596869,
                             "garage_area": 0.04054746926921173,
-                            "retail_area": 0.002400242246660788
+                            "retail_area": 0.002400242246660788,
+                            "shop_numbers_normalized": 0.4615384615,
+                            "garage_area_normalized": 1.0,
+                            "retail_area_normalized": 0.1798308303,
+                            "beers_per_square_km_normalized": 0.0969957826,
+                            "station_numbers_normalized": 0.3381294964,
+                            "avg_altitude_apartments_normalized": 0.276077216,
+                            "green_area_normalized": 0.1257646386,
+                            "index_level": 3.4494518445
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -4589,7 +4621,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Кировский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Кировский район",
                             "common_area": 50.40565680664726,
                             "beers_per_square_km": 0.23806851770687565,
                             "shop_numbers": 16,
@@ -4597,7 +4629,15 @@
                             "station_numbers": 138,
                             "avg_altitude_apartments": 8.058620689655172,
                             "garage_area": 0.014208211626035661,
-                            "retail_area": 0.013251640620661797
+                            "retail_area": 0.013251640620661797,
+                            "shop_numbers_normalized": 1.0,
+                            "garage_area_normalized": 0.2762139148,
+                            "retail_area_normalized": 1.0,
+                            "beers_per_square_km_normalized": 0.0223178548,
+                            "station_numbers_normalized": 0.6330935252,
+                            "avg_altitude_apartments_normalized": 0.4037681844,
+                            "green_area_normalized": 0.0807149949,
+                            "index_level": 3.0115085661
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -4993,7 +5033,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Ленинский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Ленинский район",
                             "common_area": 70.05485255193186,
                             "beers_per_square_km": 0.34258868766026923,
                             "shop_numbers": 10,
@@ -5001,7 +5041,15 @@
                             "station_numbers": 189,
                             "avg_altitude_apartments": 7.201314708299096,
                             "garage_area": 0.005665203120901348,
-                            "retail_area": 0.0024489992301548755
+                            "retail_area": 0.0024489992301548755,
+                            "shop_numbers_normalized": 0.5384615385,
+                            "garage_area_normalized": 0.0414574624,
+                            "retail_area_normalized": 0.1835159752,
+                            "beers_per_square_km_normalized": 0.0395264496,
+                            "station_numbers_normalized": 1.0,
+                            "avg_altitude_apartments_normalized": 0.2331982628,
+                            "green_area_normalized": 0.0,
+                            "index_level": 4.9638403115
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -5608,7 +5656,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Октябрьский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Октябрьский район",
                             "common_area": 59.145388383013525,
                             "beers_per_square_km": 0.5072246682315465,
                             "shop_numbers": 14,
@@ -5616,7 +5664,15 @@
                             "station_numbers": 141,
                             "avg_altitude_apartments": 11.055357142857142,
                             "garage_area": 0.009069453170920314,
-                            "retail_area": 0.002946142158131521
+                            "retail_area": 0.002946142158131521,
+                            "shop_numbers_normalized": 0.8461538462,
+                            "garage_area_normalized": 0.1350040935,
+                            "retail_area_normalized": 0.221090976,
+                            "beers_per_square_km_normalized": 0.0666327381,
+                            "station_numbers_normalized": 0.654676259,
+                            "avg_altitude_apartments_normalized": 1.0,
+                            "green_area_normalized": 0.3107878873,
+                            "index_level": 3.6965824926
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -5881,7 +5937,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Первомайский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Первомайский район",
                             "common_area": 68.28193216231156,
                             "beers_per_square_km": 0.10251613828619327,
                             "shop_numbers": 6,
@@ -5889,7 +5945,15 @@
                             "station_numbers": 101,
                             "avg_altitude_apartments": 7.233676975945017,
                             "garage_area": 0.00415652699908998,
-                            "retail_area": 0.0012694981384978727
+                            "retail_area": 0.0012694981384978727,
+                            "shop_numbers_normalized": 0.2307692308,
+                            "garage_area_normalized": 0.0,
+                            "retail_area_normalized": 0.0943670565,
+                            "beers_per_square_km_normalized": 0.0,
+                            "station_numbers_normalized": 0.3669064748,
+                            "avg_altitude_apartments_normalized": 0.2396370718,
+                            "green_area_normalized": 0.3124614588,
+                            "index_level": 5.1145945745
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -6257,7 +6321,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Советский район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, 630000, Russia",
+                            "title": "Советский район",
                             "common_area": 87.49553233205589,
                             "beers_per_square_km": 0.22858309981014385,
                             "shop_numbers": 3,
@@ -6265,7 +6329,15 @@
                             "station_numbers": 152,
                             "avg_altitude_apartments": 6.029230769230769,
                             "garage_area": 0.013812139941084059,
-                            "retail_area": 0.0001499978201586672
+                            "retail_area": 0.0001499978201586672,
+                            "shop_numbers_normalized": 0.0,
+                            "garage_area_normalized": 0.2653301162,
+                            "retail_area_normalized": 0.0097531095,
+                            "beers_per_square_km_normalized": 0.0207561398,
+                            "station_numbers_normalized": 0.7338129496,
+                            "avg_altitude_apartments_normalized": 0.0,
+                            "green_area_normalized": 0.6178752749,
+                            "index_level": 6.055848859
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -7319,7 +7391,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Центральный район, Novosibirsk, Novosibirsk Oblast, Siberian Federal District, Russia",
+                            "title": "Центральный район",
                             "common_area": 6.314526388489347,
                             "beers_per_square_km": 6.176235175941699,
                             "shop_numbers": 4,
@@ -7327,7 +7399,15 @@
                             "station_numbers": 73,
                             "avg_altitude_apartments": 9.816037735849056,
                             "garage_area": 0.007079975197573776,
-                            "retail_area": 0.010409655083402358
+                            "retail_area": 0.010409655083402358,
+                            "shop_numbers_normalized": 0.0769230769,
+                            "garage_area_normalized": 0.0803345013,
+                            "retail_area_normalized": 0.7851973692,
+                            "beers_per_square_km_normalized": 1.0,
+                            "station_numbers_normalized": 0.1654676259,
+                            "avg_altitude_apartments_normalized": 0.7534245431,
+                            "green_area_normalized": 0.0224879044,
+                            "index_level": 2.4920760398
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -10450,7 +10530,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Admiralteysky District, Сенной округ, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Адмиралтейский район",
                             "common_area": 13.795677292771133,
                             "beers_per_square_km": 9.350755114255634,
                             "shop_numbers": 19,
@@ -10458,7 +10538,15 @@
                             "station_numbers": 161,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.0016336901671875057,
-                            "retail_area": 0.007732892913473779
+                            "retail_area": 0.007732892913473779,
+                            "shop_numbers_normalized": 0.3137254902,
+                            "garage_area_normalized": 0.0175933406,
+                            "retail_area_normalized": 0.253554164,
+                            "beers_per_square_km_normalized": 0.7024717274,
+                            "station_numbers_normalized": 0.221978022,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.0194917003,
+                            "index_level": 3.4684012516
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -10785,7 +10873,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Vasileostrovsky District, округ Гавань, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Василеостровский район",
                             "common_area": 21.629267657296325,
                             "beers_per_square_km": 4.57713139291629,
                             "shop_numbers": 28,
@@ -10793,7 +10881,15 @@
                             "station_numbers": 207,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.007379888135819739,
-                            "retail_area": 0.004700200748900675
+                            "retail_area": 0.004700200748900675,
+                            "shop_numbers_normalized": 0.4901960784,
+                            "garage_area_normalized": 0.1309240391,
+                            "retail_area_normalized": 0.1528491687,
+                            "beers_per_square_km_normalized": 0.3411789671,
+                            "station_numbers_normalized": 0.3230769231,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.0,
+                            "index_level": 3.7222049212
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -11093,7 +11189,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Vyborgsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Выборгский район",
                             "common_area": 114.66229301647803,
                             "beers_per_square_km": 1.7180887876687525,
                             "shop_numbers": 37,
@@ -11101,7 +11197,15 @@
                             "station_numbers": 513,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.007825053535772218,
-                            "retail_area": 0.009792367152649592
+                            "retail_area": 0.009792367152649592,
+                            "shop_numbers_normalized": 0.6666666667,
+                            "garage_area_normalized": 0.1397039151,
+                            "retail_area_normalized": 0.3219420295,
+                            "beers_per_square_km_normalized": 0.1247916993,
+                            "station_numbers_normalized": 0.9956043956,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.393702541,
+                            "index_level": 4.6504788776
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -12252,7 +12356,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Kalininsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Калининский район",
                             "common_area": 40.217298172918106,
                             "beers_per_square_km": 2.8346011586816733,
                             "shop_numbers": 35,
@@ -12260,7 +12364,15 @@
                             "station_numbers": 402,
                             "avg_altitude_apartments": 8.323875432525952,
                             "garage_area": 0.036184890121632604,
-                            "retail_area": 0.030211821899480334
+                            "retail_area": 0.030211821899480334,
+                            "shop_numbers_normalized": 0.6274509804,
+                            "garage_area_normalized": 0.6990372529,
+                            "retail_area_normalized": 1.0,
+                            "beers_per_square_km_normalized": 0.2092951834,
+                            "station_numbers_normalized": 0.7516483516,
+                            "avg_altitude_apartments_normalized": 0.9704304504,
+                            "green_area_normalized": 0.1723888436,
+                            "index_level": 2.4178233282
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -12565,7 +12677,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Kirovsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Кировский район",
                             "common_area": 46.025804688823676,
                             "beers_per_square_km": 1.5860667834825797,
                             "shop_numbers": 25,
@@ -12573,7 +12685,15 @@
                             "station_numbers": 282,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.02314594436505563,
-                            "retail_area": 0.01001020422913796
+                            "retail_area": 0.01001020422913796,
+                            "shop_numbers_normalized": 0.431372549,
+                            "garage_area_normalized": 0.4418736748,
+                            "retail_area_normalized": 0.3291756294,
+                            "beers_per_square_km_normalized": 0.1147995849,
+                            "station_numbers_normalized": 0.4879120879,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.0381593677,
+                            "index_level": 3.7231262691
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -13321,7 +13441,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Kolpinsky District, Saint Petersburg, Northwestern Federal District, 196643, Russia",
+                            "title": "Колпинский район",
                             "common_area": 102.91605214403609,
                             "beers_per_square_km": 0.19433314418249364,
                             "shop_numbers": 16,
@@ -13329,7 +13449,15 @@
                             "station_numbers": 264,
                             "avg_altitude_apartments": 5.9135135135135135,
                             "garage_area": 0.007118688790920509,
-                            "retail_area": 0.0015927696778846455
+                            "retail_area": 0.0015927696778846455,
+                            "shop_numbers_normalized": 0.2549019608,
+                            "garage_area_normalized": 0.1257724755,
+                            "retail_area_normalized": 0.0496623583,
+                            "beers_per_square_km_normalized": 0.0094659186,
+                            "station_numbers_normalized": 0.4483516484,
+                            "avg_altitude_apartments_normalized": 0.3813533371,
+                            "green_area_normalized": 0.2577017557,
+                            "index_level": 4.8848973537
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -13907,7 +14035,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Krasnogvardeysky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Красногвардейский район",
                             "common_area": 56.24007282557803,
                             "beers_per_square_km": 1.9203389073650259,
                             "shop_numbers": 38,
@@ -13915,7 +14043,15 @@
                             "station_numbers": 366,
                             "avg_altitude_apartments": 8.182565789473685,
                             "garage_area": 0.026968262624673747,
-                            "retail_area": 0.014827385558702246
+                            "retail_area": 0.014827385558702246,
+                            "shop_numbers_normalized": 0.6862745098,
+                            "garage_area_normalized": 0.5172602174,
+                            "retail_area_normalized": 0.489137207,
+                            "beers_per_square_km_normalized": 0.140099044,
+                            "station_numbers_normalized": 0.6725274725,
+                            "avg_altitude_apartments_normalized": 0.935895273,
+                            "green_area_normalized": 0.1113465993,
+                            "index_level": 3.0152078207
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -14590,7 +14726,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Krasnoselsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Красносельский район",
                             "common_area": 90.73993495292194,
                             "beers_per_square_km": 1.0249070604717827,
                             "shop_numbers": 33,
@@ -14598,7 +14734,15 @@
                             "station_numbers": 392,
                             "avg_altitude_apartments": 8.104092526690392,
                             "garage_area": 0.02244865970457313,
-                            "retail_area": 0.009797702653677975
+                            "retail_area": 0.009797702653677975,
+                            "shop_numbers_normalized": 0.5882352941,
+                            "garage_area_normalized": 0.4281213192,
+                            "retail_area_normalized": 0.3221192026,
+                            "beers_per_square_km_normalized": 0.0723280879,
+                            "station_numbers_normalized": 0.7296703297,
+                            "avg_altitude_apartments_normalized": 0.916716907,
+                            "green_area_normalized": 0.2950802175,
+                            "index_level": 3.6972297364
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -15802,7 +15946,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Kronshtadtsky District, Kronstadt, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Кронштадтский район",
                             "common_area": 20.046040644895708,
                             "beers_per_square_km": 0.6983922784554863,
                             "shop_numbers": 3,
@@ -15810,7 +15954,15 @@
                             "station_numbers": 60,
                             "avg_altitude_apartments": 4.353107344632768,
                             "garage_area": 0.012092787654648624,
-                            "retail_area": 0.006217859138827671
+                            "retail_area": 0.006217859138827671,
+                            "shop_numbers_normalized": 0.0,
+                            "garage_area_normalized": 0.2238752735,
+                            "retail_area_normalized": 0.2032452435,
+                            "beers_per_square_km_normalized": 0.0476157449,
+                            "station_numbers_normalized": 0.0,
+                            "avg_altitude_apartments_normalized": 0.0,
+                            "green_area_normalized": 0.3071325678,
+                            "index_level": 4.8323963059
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -18386,7 +18538,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Kurortny District, Pesochny, Vyborgsky District, Saint Petersburg, Northwestern Federal District, 197758, Russia",
+                            "title": "Курортный район",
                             "common_area": 274.31449607086915,
                             "beers_per_square_km": 0.06926356525865607,
                             "shop_numbers": 11,
@@ -18394,7 +18546,15 @@
                             "station_numbers": 311,
                             "avg_altitude_apartments": 5.2254901960784315,
                             "garage_area": 0.0010676196549467372,
-                            "retail_area": 0.00009720687581091055
+                            "retail_area": 0.00009720687581091055,
+                            "shop_numbers_normalized": 0.1568627451,
+                            "garage_area_normalized": 0.006428886,
+                            "retail_area_normalized": 0.0,
+                            "beers_per_square_km_normalized": 0.0,
+                            "station_numbers_normalized": 0.5516483516,
+                            "avg_altitude_apartments_normalized": 0.213204817,
+                            "green_area_normalized": 1.0,
+                            "index_level": 6.1751519036
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -21243,7 +21403,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Moskovsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Московский район",
                             "common_area": 73.91116646485071,
                             "beers_per_square_km": 2.1377013455083094,
                             "shop_numbers": 41,
@@ -21251,7 +21411,15 @@
                             "station_numbers": 354,
                             "avg_altitude_apartments": 7.474617244157937,
                             "garage_area": 0.017835634298778484,
-                            "retail_area": 0.022884352138586195
+                            "retail_area": 0.022884352138586195,
+                            "shop_numbers_normalized": 0.7450980392,
+                            "garage_area_normalized": 0.3371398747,
+                            "retail_area_normalized": 0.7566806099,
+                            "beers_per_square_km_normalized": 0.1565501679,
+                            "station_numbers_normalized": 0.6461538462,
+                            "avg_altitude_apartments_normalized": 0.7628771539,
+                            "green_area_normalized": 0.3358104571,
+                            "index_level": 3.2236184575
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -21805,7 +21973,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Nevsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Невский район",
                             "common_area": 61.804687517960424,
                             "beers_per_square_km": 2.0386803179513597,
                             "shop_numbers": 54,
@@ -21813,7 +21981,15 @@
                             "station_numbers": 366,
                             "avg_altitude_apartments": 8.44486692015209,
                             "garage_area": 0.029410406791944562,
-                            "retail_area": 0.01458216002872351
+                            "retail_area": 0.01458216002872351,
+                            "shop_numbers_normalized": 1.0,
+                            "garage_area_normalized": 0.5654259621,
+                            "retail_area_normalized": 0.4809941333,
+                            "beers_per_square_km_normalized": 0.1490557397,
+                            "station_numbers_normalized": 0.6725274725,
+                            "avg_altitude_apartments_normalized": 1.0,
+                            "green_area_normalized": 0.051155465,
+                            "index_level": 2.5282071024
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -22053,7 +22229,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Petrogradsky District, округ Чкаловское, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Петроградский район",
                             "common_area": 19.650363911856317,
                             "beers_per_square_km": 4.987184992582776,
                             "shop_numbers": 4,
@@ -22061,7 +22237,15 @@
                             "station_numbers": 150,
                             "avg_altitude_apartments": 5.334645669291339,
                             "garage_area": 0.002323177510840128,
-                            "retail_area": 0.0026872653154894947
+                            "retail_area": 0.0026872653154894947,
+                            "shop_numbers_normalized": 0.0196078431,
+                            "garage_area_normalized": 0.0311919118,
+                            "retail_area_normalized": 0.0860066927,
+                            "beers_per_square_km_normalized": 0.3722139639,
+                            "station_numbers_normalized": 0.1978021978,
+                            "avg_altitude_apartments_normalized": 0.23988172,
+                            "green_area_normalized": 0.2740529306,
+                            "index_level": 4.7229529969
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -22249,7 +22433,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Petrodvortsovy District, Peterhof, Горбунковское сельское поселение, Kaarosta District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Петродворцовый район",
                             "common_area": 110.77700075118064,
                             "beers_per_square_km": 0.1805428912534161,
                             "shop_numbers": 18,
@@ -22257,7 +22441,15 @@
                             "station_numbers": 322,
                             "avg_altitude_apartments": 4.7560975609756095,
                             "garage_area": 0.007348666466308414,
-                            "retail_area": 0.001292722986300634
+                            "retail_area": 0.001292722986300634,
+                            "shop_numbers_normalized": 0.2941176471,
+                            "garage_area_normalized": 0.1303082626,
+                            "retail_area_normalized": 0.0396988675,
+                            "beers_per_square_km_normalized": 0.0084222002,
+                            "station_numbers_normalized": 0.5758241758,
+                            "avg_altitude_apartments_normalized": 0.0984882442,
+                            "green_area_normalized": 0.8502607099,
+                            "index_level": 5.8550496641
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -24219,7 +24411,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Primorsky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Приморский район",
                             "common_area": 110.49639899412095,
                             "beers_per_square_km": 1.8824142858362904,
                             "shop_numbers": 45,
@@ -24227,7 +24419,15 @@
                             "station_numbers": 515,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.011000265735777521,
-                            "retail_area": 0.01762976493637508
+                            "retail_area": 0.01762976493637508,
+                            "shop_numbers_normalized": 0.8235294118,
+                            "garage_area_normalized": 0.2023277611,
+                            "retail_area_normalized": 0.5821943281,
+                            "beers_per_square_km_normalized": 0.1372287107,
+                            "station_numbers_normalized": 1.0,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.522389027,
+                            "index_level": 4.2913850668
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -25928,7 +26128,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Pushkinsky District, Pushkin, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Пушкинский район",
                             "common_area": 239.68585767446245,
                             "beers_per_square_km": 0.21695063907619272,
                             "shop_numbers": 22,
@@ -25936,7 +26136,15 @@
                             "station_numbers": 376,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.002805216675459227,
-                            "retail_area": 0.003182832422482477
+                            "retail_area": 0.003182832422482477,
+                            "shop_numbers_normalized": 0.3725490196,
+                            "garage_area_normalized": 0.0406990391,
+                            "retail_area_normalized": 0.102462726,
+                            "beers_per_square_km_normalized": 0.0111777286,
+                            "station_numbers_normalized": 0.6945054945,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.3390486497,
+                            "index_level": 5.0209418824
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -27028,7 +27236,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Frunzensky District, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Фрунзенский район",
                             "common_area": 37.471295553309005,
                             "beers_per_square_km": 2.3484643031572183,
                             "shop_numbers": 41,
@@ -27036,7 +27244,15 @@
                             "station_numbers": 310,
                             "avg_altitude_apartments": 7.913085004775549,
                             "garage_area": 0.05144458188477878,
-                            "retail_area": 0.02961806482288685
+                            "retail_area": 0.02961806482288685,
+                            "shop_numbers_normalized": 0.7450980392,
+                            "garage_area_normalized": 1.0,
+                            "retail_area_normalized": 0.9802834246,
+                            "beers_per_square_km_normalized": 0.1725018087,
+                            "station_numbers_normalized": 0.5494505495,
+                            "avg_altitude_apartments_normalized": 0.8700358842,
+                            "green_area_normalized": 0.1525540409,
+                            "index_level": 1.9340854336
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -27223,7 +27439,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Tsentralny District, Литейный округ, Saint Petersburg, Northwestern Federal District, Russia",
+                            "title": "Tsentralny District",
                             "common_area": 17.69327445657927,
                             "beers_per_square_km": 13.281882931093904,
                             "shop_numbers": 16,
@@ -27231,7 +27447,15 @@
                             "station_numbers": 207,
                             "avg_altitude_apartments": 4.802483069977427,
                             "garage_area": 0.0007416563274571359,
-                            "retail_area": 0.011801582818294904
+                            "retail_area": 0.011801582818294904,
+                            "shop_numbers_normalized": 0.2549019608,
+                            "garage_area_normalized": 0.0,
+                            "retail_area_normalized": 0.3886609851,
+                            "beers_per_square_km_normalized": 1.0,
+                            "station_numbers_normalized": 0.3230769231,
+                            "avg_altitude_apartments_normalized": 0.1098245674,
+                            "green_area_normalized": 0.0287189613,
+                            "index_level": 3.598408371
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -28100,7 +28324,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Кировский район, Tomsk, городской округ Томск, Tomsk Oblast, Siberian Federal District, 634000, Russia",
+                            "title": "Кировский район",
                             "common_area": 87.46186286270742,
                             "beers_per_square_km": 0.2401046503315918,
                             "shop_numbers": 8,
@@ -28108,7 +28332,15 @@
                             "station_numbers": 188,
                             "avg_altitude_apartments": 4.904220779220779,
                             "garage_area": 0.005574477514894108,
-                            "retail_area": 0.000023936275189016434
+                            "retail_area": 0.000023936275189016434,
+                            "shop_numbers_normalized": 0.6666666667,
+                            "garage_area_normalized": 0.0,
+                            "retail_area_normalized": 0.0,
+                            "beers_per_square_km_normalized": 0.1029359935,
+                            "station_numbers_normalized": 1.0,
+                            "avg_altitude_apartments_normalized": 0.0,
+                            "green_area_normalized": 1.0,
+                            "index_level": 6.2303973398
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -28901,7 +29133,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Ленинский район, Tomsk, городской округ Томск, Tomsk Oblast, Siberian Federal District, 634000, Russia",
+                            "title": "Ленинский район",
                             "common_area": 28.993352205314157,
                             "beers_per_square_km": 0.48286931089789464,
                             "shop_numbers": 7,
@@ -28909,7 +29141,15 @@
                             "station_numbers": 110,
                             "avg_altitude_apartments": null,
                             "garage_area": 0.016029838148830806,
-                            "retail_area": 0.002034832113534932
+                            "retail_area": 0.002034832113534932,
+                            "shop_numbers_normalized": 0.3333333333,
+                            "garage_area_normalized": 0.9963263376,
+                            "retail_area_normalized": 0.6379183854,
+                            "beers_per_square_km_normalized": 0.4899174625,
+                            "station_numbers_normalized": 0.0,
+                            "avg_altitude_apartments_normalized": 0.4857237485,
+                            "green_area_normalized": 0.0,
+                            "index_level": 2.0567807326
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -29152,7 +29392,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Октябрьский район, городской округ Томск, Tomsk Oblast, Siberian Federal District, Russia",
+                            "title": "Октябрьский район",
                             "common_area": 148.122890098576,
                             "beers_per_square_km": 0.17552992641918452,
                             "shop_numbers": 9,
@@ -29160,7 +29400,15 @@
                             "station_numbers": 165,
                             "avg_altitude_apartments": 7.110410094637224,
                             "garage_area": 0.008245250445349782,
-                            "retail_area": 0.0011664988166762208
+                            "retail_area": 0.0011664988166762208,
+                            "shop_numbers_normalized": 1.0,
+                            "garage_area_normalized": 0.2545068989,
+                            "retail_area_normalized": 0.3624561938,
+                            "beers_per_square_km_normalized": 0.0,
+                            "station_numbers_normalized": 0.7051282051,
+                            "avg_altitude_apartments_normalized": 1.0,
+                            "green_area_normalized": 0.9695118936,
+                            "index_level": 4.0576770059
                         },
                         "geometry": {
                             "type": "MultiPolygon",
@@ -30063,7 +30311,7 @@
                     {
                         "type": "Feature",
                         "properties": {
-                            "title": "Советский район, Tomsk, городской округ Томск, Tomsk Oblast, Siberian Federal District, 634000, Russia",
+                            "title": "Советский район",
                             "common_area": 31.13872461121788,
                             "beers_per_square_km": 0.8028588297092176,
                             "shop_numbers": 6,
@@ -30071,7 +30319,15 @@
                             "station_numbers": 111,
                             "avg_altitude_apartments": 5.96100278551532,
                             "garage_area": 0.0160683892378536,
-                            "retail_area": 0.0031762138772231724
+                            "retail_area": 0.0031762138772231724,
+                            "shop_numbers_normalized": 0.0,
+                            "garage_area_normalized": 1.0,
+                            "retail_area_normalized": 1.0,
+                            "beers_per_square_km_normalized": 1.0,
+                            "station_numbers_normalized": 0.0128205128,
+                            "avg_altitude_apartments_normalized": 0.4790078525,
+                            "green_area_normalized": 0.455105333,
+                            "index_level": 1.9889179933
                         },
                         "geometry": {
                             "type": "MultiPolygon",

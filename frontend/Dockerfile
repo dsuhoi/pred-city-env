@@ -8,3 +8,4 @@ RUN poetry config virtualenvs.create false \
 && poetry install --no-root --no-interaction --no-ansi
 
 CMD ["streamlit", "run", "main.py"]
+#, "--server.address=0.0.0.0"]

@@ -24,6 +24,19 @@ async def init_geo_data():
             for dist in city["districts"]["features"]:
                 dist_props = dist["properties"]
                 dist_title = dist_props.pop("title")
+                dist_props = {
+                    k: dist_props[k]
+                    for k in [
+                        "common_area",
+                        "beers_per_square_km",
+                        "shop_numbers",
+                        "green_area",
+                        "station_numbers",
+                        "avg_altitude_apartments",
+                        "garage_area",
+                        "retail_area",
+                    ]
+                }
                 districts.append(
                     District(
                         title=dist_title,
