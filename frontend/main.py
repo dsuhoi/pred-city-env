@@ -4,9 +4,10 @@ import requests
 import streamlit as st
 from streamlit_folium import folium_static
 
-URL = "http://backend:8000/geo"
+URL = "http://nginx:8080/api/geo"
 
 all_cities = requests.get(f"{URL}/cities").json()
+print(all_cities)
 select_city_vars = {"Все города": "all"} | {
     city["title"]: city["id"] for city in all_cities
 }

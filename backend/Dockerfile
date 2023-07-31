@@ -5,11 +5,7 @@ WORKDIR /backend_app
 RUN apt-get update && apt-get install -y libpq-dev netcat
 RUN pip3 install poetry
 
-COPY *.py pytest.ini poetry.lock pyproject.toml ./
-COPY core/ ./core/
-COPY routers/ ./routers/
-COPY data/ ./data/
-COPY tests/ ./tests/
+COPY . .
 
 RUN poetry config virtualenvs.create false \
 && poetry install --no-root --no-interaction --no-ansi
