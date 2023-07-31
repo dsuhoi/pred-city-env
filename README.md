@@ -8,7 +8,56 @@
 Сервис предоставляет данные по различным метрикам городов, районов и кварталов,
 которые могут быть полезны при оценке благоустройства определенной местности.
 
+## Установка и запуск
+Запустите в корневой директории проекта следующую команду:
+```bash
+docker compose up -d --build
+```
+
+Для просмотра карты перейдите по адресу `0.0.0.0:8081`, а для доступа к API - `0.0.0.0:8001`.
+
 ## Архитектура
+```mermaid
+flowchart LR
+    subgraph server [Server]
+        direction TB
+        subgraph ps [Parsers]
+            direction TB
+            p1[Engine 1]
+            p2[Engine 2]
+        end
+        subgraph db [Databases]
+            direction TB
+            db1[(PostGis)]
+        end
+        ps --> db1 --> b1
+        subgraph b1 [Backend]
+            direction LR
+            b2[[API 1]]
+            b3[[API 2]]
+        end
+
+        ng{{Nginx}} <--> b1
+        react[[Frontend]]
+        ng <-- REST API --> react
+    end
+    subgraph res [Resources]
+        direction TB
+        r1(Site)
+        r2(Storage)
+    end
+
+    r1 .-> p1
+    r2 .-> p2
+
+    subgraph cls [Clients]
+        direction LR
+        cl1([Client 1])
+        cl2([Client 2])
+    end
+    react <-. WEB .-> cls
+    ng <-. REST API .-> cls
+```
 Сервис состоит из четырех основных частей:
 - База данных для хранения геоданных (PostGis)
 - [Backend](#backend)
